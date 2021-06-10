@@ -2,6 +2,10 @@ import pandas as pd
 from zipfile import ZipFile
 
 def read_lastfm(zip_name = "lastfm-dataset-1K.zip"):
+    """
+    Read the zip archive containing the song listening history aswell
+    as the user demographics
+    """
     with ZipFile(zip_name, 'r') as z:
         folder = "lastfm-dataset-1K/"
         
@@ -21,12 +25,16 @@ def read_lastfm(zip_name = "lastfm-dataset-1K.zip"):
     return songs, users
 
 def build_vocab(model):
+    """Creates a dictionary with song ID's as key and song embeddings as value"""
     emb_vectors = {}
     for n in model.wv.index_to_key:
         emb_vectors[n] = model.wv[n]
     return emb_vectors
 
 def get_embeddings(df, , **kwargs):
+    """Train a Word2Vec model on the listening history. Each user is a document
+    and sentences are lists of song ID's.
+    """
     df = df.sort_values("timestamp")
     df = df[~df.track_name.isna()]
     df["song_id"]= df.artist_name.cat.codes.astype("int64") * df.track_name.nunique() \
@@ -42,6 +50,7 @@ def get_embeddings(df, , **kwargs):
     return df, emb_vectors, model
 
 def load_model(filename):
+    """Load an existing model"""
     model = Word2Vec.load(filename)
     emb_vectors = build_vocab(model)
     return emb_vectors, model
