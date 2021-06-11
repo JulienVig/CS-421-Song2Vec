@@ -1,5 +1,6 @@
 import pandas as pd
 from zipfile import ZipFile
+from gensim.models import Word2Vec
 
 def read_lastfm(zip_name = "lastfm-dataset-1K.zip"):
     """
@@ -31,7 +32,7 @@ def build_vocab(model):
         emb_vectors[n] = model.wv[n]
     return emb_vectors
 
-def get_embeddings(df, , **kwargs):
+def get_embeddings(df, **kwargs):
     """Train a Word2Vec model on the listening history. Each user is a document
     and sentences are lists of song ID's.
     """
@@ -43,7 +44,7 @@ def get_embeddings(df, , **kwargs):
     assert len(df.query("song_id < 0")) == 0 #Check underflow
     
     document = df.groupby("user_id").agg(sentences=("song_id", list))
-    model = Word2Vec(document.sentences.values, , **kwargs)
+    model = Word2Vec(document.sentences.values, **kwargs)
     
     emb_vectors = build_vocab(model)
     print(f"Number of song embeddings: {len(emb_vectors)}")

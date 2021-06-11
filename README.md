@@ -9,9 +9,9 @@ Project realized in the context of the Machine Learning for Behavioral Data (CS-
 * `EDA.ipynb`: Exploratory data analysis
 * `hyperparam_finetuning.ipynb`: Song2Vec finetuning
 * `prediction_eval_and_plotly.ipynb`: 
-* `tags.ipynb`: tag scraping and processing
-* `utils.py`: script with common functions
-* `vector_artihmetic.ipynb`: exploratory notebook for operation on song embeddings
+* `tags.ipynb`: Tag scraping and processing
+* `utils.py`: Script with common functions
+* `vector_artihmetic.ipynb`: Exploratory notebook for operation on song embeddings
 * `visualizations.ipynb`: Song2Vec 2D visualizations
 
 
