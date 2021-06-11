@@ -7,8 +7,8 @@ Project realized in the context of the Machine Learning for Behavioral Data (CS-
 * `classification_tasks.ipynb`: Model comparisons on classifications tasks
 * `clustering.ipynb`: Clustering and interpretation
 * `EDA.ipynb`: Exploratory data analysis
+* `data_cleaning.ipynb`: Data cleaning using MusicBrainz' database
 * `hyperparam_finetuning.ipynb`: Song2Vec finetuning
-* `prediction_eval_and_plotly.ipynb`: 
 * `tags.ipynb`: Tag scraping and processing
 * `utils.py`: Script with common functions
 * `vector_artihmetic.ipynb`: Exploratory notebook for operation on song embeddings
