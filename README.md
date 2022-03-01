@@ -1,6 +1,6 @@
 # Song2Vec
 
-Project realized in the context of the Machine Learning for Behavioral Data (CS-421) class of 2021. Using the music listening history of a thousand users, composed of 20 million listens, we apply the word2vec method on the sequence of songs to extract information from music's context. Notably, we find similar contexts between songs from the same artist or within the same genre, or that by our song embeddings arithmetic the song Karma Police - Radiohead + Metallica = Where Is My Mind? from the Pixies. The gist of the project is the data analysis, in pandas, the methodology and the amount of data to handle. 
+Project realized in the context of the Machine Learning for Behavioral Data (CS-421) class in which I achieved a final grade of **5.5** on a 1 to 6 scale. Using the music listening history of a thousand users, composed of 20 million listens, we apply the word2vec method on the sequence of songs to extract information from music's context. Notably, we find similar contexts between songs from the same artist or within the same genre, or that by our song embeddings arithmetic the song Karma Police - Radiohead + Metallica = Where Is My Mind? from the Pixies. The gist of the project is the data analysis, in pandas, the methodology and the amount of data to handle. 
 
 My contributions are:
 * The Exploratory Data Analysis [`EDA.ipynb`](notebooks/EDA.ipynb), showing the incompleteness of the given dataset
